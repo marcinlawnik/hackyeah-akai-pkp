@@ -8,6 +8,7 @@
         };
         window.onload = function () {
             var chatDiv = document.getElementById('chat');
+            const imageDiv = document.getElementById('image');
             var sendButton = document.getElementById('send');
             var chatInput = document.getElementById('chatInput');
             const imageButton = document.getElementById('imageButton');
@@ -24,7 +25,7 @@
                 const parsed = JSON.parse(e.data);
                 console.log(parsed);
                 if(parsed.type == 'image'){
-                    chatDiv.innerHTML = '<img src="' + parsed.msg + '">';
+                    imageDiv.innerHTML = '<img src="' + parsed.msg + '">';
                 } else {
                     chatDiv.innerHTML += '<p>' + parsed.msg + '</p><br>';
                 }
@@ -34,6 +35,9 @@
 
         }
     </script>
+    <div class="container" id="image">
+
+    </div>
     <div class="container" id="chat">
 
     </div>
