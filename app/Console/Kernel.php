@@ -25,16 +25,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function(){
-            $image = Picture::inRandomOrder()->first();
-
-            \Ratchet\Client\connect('ws://hatechat.akai.org.pl/websocket/')->then(function($conn) use ($image) {
-                $conn->send(json_encode(['type' => 'image', 'chat_msg' => $image->url]));
-                $conn->close();
-            }, function ($e) {
-                echo "Could not connect: {$e->getMessage()}\n";
-            });
-        })->everyMinute();
     }
 
     /**
