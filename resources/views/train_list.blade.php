@@ -6,7 +6,7 @@
 
 <body>
 <p>
-    <a herf="/purchase_site">strona zakupu</a>
+    <a href="/purchase_site">strona zakupu</a>
 </p>
 
 </body>

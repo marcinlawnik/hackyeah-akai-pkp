@@ -6,7 +6,7 @@
 
 <body>
     <p>
-        <a herf="/log">zaloguj się</a>
+        <a href="/log">zaloguj się</a>
     </p>
 
 </body>
