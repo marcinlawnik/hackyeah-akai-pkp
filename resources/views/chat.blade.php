@@ -18,10 +18,10 @@
                 conn.send(JSON.stringify({type:"chat", chat_msg: chatInput.value}));
             }
             sendButton.addEventListener("submit", sendMessage);
-            const sendImage = function () {
-                conn.send(JSON.stringify({type:"image", chat_msg: chatInput.value}));
-            }
-            imageButton.addEventListener("click", sendImage);
+            // const sendImage = function () {
+            //     conn.send(JSON.stringify({type:"image", chat_msg: chatInput.value}));
+            // }
+            // imageButton.addEventListener("click", sendImage);
             conn.onmessage = function(e) {
                 const parsed = JSON.parse(e.data);
                 console.log(parsed);
