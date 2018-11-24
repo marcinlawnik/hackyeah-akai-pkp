@@ -2,7 +2,7 @@
 
 @section('content')
     <script type="text/javascript">
-        var conn = new WebSocket('ws://hatechat.akai.org.pl/:8090');
+        var conn = new WebSocket('ws://hatechat.akai.org.pl:8090');
         conn.onopen = function(e) {
             console.log("Connection established!");
         };
