@@ -1,13 +1,7 @@
-<!doctype html>
-<html>
-<head>
+@extends('app')
 
-</head>
-
-<body>
-<p>
-    <a href="/purchase_site">strona zakupu</a>
-</p>
-
-</body>
-</html>
+@section('content')
+    <p>
+        <a href="/purchase_site">strona zakupu</a>
+    </p>
+@endsection

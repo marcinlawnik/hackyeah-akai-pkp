@@ -1,13 +1,7 @@
-<!doctype html>
-<html>
-<head>
+@extends('app')
 
-</head>
-
-<body>
+@section('content')
     <p>
         <a href="/log">zaloguj się</a>
     </p>
-
-</body>
-</html>
+@endsection

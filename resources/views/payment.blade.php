@@ -1,10 +1,7 @@
-<!doctype html>
-<html>
-<head>
+@extends('app')
 
-</head>
-
-<body>
-
-</body>
-</html>
+@section('content')
+    <p>
+        <a href="/payment">płatność</a>hehe
+    </p>
+@endsection

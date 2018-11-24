@@ -1,11 +1,7 @@
-<!doctype html>
-<html>
-<head>
+@extends('app')
 
-</head>
-<body>
+@section('content')
     <p>
         <a href="/train_list">lista pociągów</a>
     </p>
-</body>
-</html>
+@endsection
