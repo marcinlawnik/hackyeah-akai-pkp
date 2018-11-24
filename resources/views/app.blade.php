@@ -1,12 +1,10 @@
 <!doctype html>
 <html>
 <head>
-
+    @include('includes.header')
 </head>
 
 <body>
-<p>
-    <a herf="/payment">płatność</a>
-</p>
+@yield('content')
 </body>
 </html>
