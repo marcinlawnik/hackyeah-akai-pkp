@@ -49,12 +49,13 @@
             <div class="col-sm-6" style="flex:1;">
                 <div id="chat"></div>
                 <input type="text" id="chatInput">
-                <button id="send">
-                    Send
-                </button>
-                <button id="imageButton">
-                    OBRAZEK
-                </button>
+                <form>
+                    <input type="submit" value="SEND" id="send">
+                </form>
+
+                {{--<button id="imageButton">--}}
+                    {{--OBRAZEK--}}
+                {{--</button>--}}
             </div>
         </div>
     </div>
