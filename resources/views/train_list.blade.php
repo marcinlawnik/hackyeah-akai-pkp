@@ -6,7 +6,8 @@
 
 <body>
 <p>
-    <a herf="/payment">płatność</a>
+    <a herf="/purchase_site">strona zakupu</a>
 </p>
+
 </body>
 </html>
