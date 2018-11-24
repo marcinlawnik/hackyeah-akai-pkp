@@ -42,11 +42,11 @@
                 <img src="/svg/logo_devil.svg" width="200px" height="200px">
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6">
+        <div class="row" style="display: flex;">
+            <div class="col-sm-6"  style="flex:1;">
                 <div id="image"></div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6" style="flex:1;">
                 <div id="chat"></div>
                 <input type="text" id="chatInput">
                 <button id="send">
