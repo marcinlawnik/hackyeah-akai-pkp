@@ -27,6 +27,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function(){
             $image = Picture::inRandomOrder()->first();
+            dd($image);
             \Ratchet\Client\connect('ws://hatechat.akai.org.pl/websocket/')->then(function($conn) {
                 $conn->send(json_encode(['type' => 'image', 'chat_msg' => $image->url]));
                 $conn->close();
