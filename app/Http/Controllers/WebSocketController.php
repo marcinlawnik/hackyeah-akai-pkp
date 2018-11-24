@@ -61,15 +61,21 @@ class WebSocketController implements MessageComponentInterface
 //                    "msg" => $response_from
 //                ]));
                 foreach ($this->clients as $client) {
-//                    if ($from != $client) {
                         $client->send(json_encode([
                             "type" => $type,
                             "msg" => $response_to
                         ]));
-//                    }
                 }
                 // Save to database
                 echo "Resource id $resource_id sent $chat_msg \n";
+                break;
+            case 'image':
+                foreach ($this->clients as $client) {
+                    $client->send(json_encode([
+                        "type" => 'image',
+                        "msg" => $data->chat_msg
+                    ]));
+                }
                 break;
         }
     }
