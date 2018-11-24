@@ -39,7 +39,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <img src="/svg/logo_devil.svg">
+                <img src="/svg/logo_devil.svg" width="200px" height="200px">
             </div>
         </div>
         <div class="row">
