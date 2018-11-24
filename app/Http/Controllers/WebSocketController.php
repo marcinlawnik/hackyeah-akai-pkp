@@ -30,12 +30,12 @@ class WebSocketController implements MessageComponentInterface
     {
         echo "Client connected " . $conn->resourceId . " \n";
         $this->clients->attach($conn);
-        foreach ($this->clients as $client) {
-            $client->send(json_encode([
-                "type" => "socket",
-                "msg" => "Total Connected: " . count($this->clients)
-            ]));
-        }
+//        foreach ($this->clients as $client) {
+//            $client->send(json_encode([
+//                "type" => "socket",
+//                "msg" => "Total Connected: " . count($this->clients)
+//            ]));
+//        }
     }
     /**
      * [onMessage description]
