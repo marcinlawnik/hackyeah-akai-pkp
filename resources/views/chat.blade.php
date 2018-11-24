@@ -10,12 +10,17 @@
             var chatDiv = document.getElementById('chat');
             var sendButton = document.getElementById('send');
             var chatInput = document.getElementById('chatInput');
+            const imageButton = document.getElementById('imageButton');
             //Listenery
             const sendMessage = function () {
                 // console.log(chatInput.value);
                 conn.send(JSON.stringify({type:"chat", chat_msg: chatInput.value}));
             }
             sendButton.addEventListener("click", sendMessage);
+            const sendImage = function () {
+                conn.send(JSON.stringify({type:"image", chat_msg: chatInput.value}));
+            }
+            imageButton.addEventListener("click", sendImage);
             conn.onmessage = function(e) {
                 const parsed = JSON.parse(e.data);
                 console.log(parsed);
@@ -36,6 +41,9 @@
     <input type="text" id="chatInput">
     <button id="send">
         Send
+    </button>
+    <button id="imageButton">
+        OBRAZEK
     </button>
 
 @endsection
