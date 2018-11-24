@@ -9,7 +9,7 @@
         window.onload = function () {
             var chatDiv = document.getElementById('chat');
             const imageDiv = document.getElementById('image');
-            var sendButton = document.getElementById('send');
+            var chatForm = document.getElementById('chatForm');
             var chatInput = document.getElementById('chatInput');
             const imageButton = document.getElementById('imageButton');
             //Listenery
@@ -17,7 +17,7 @@
                 e.preventDefault();
                 conn.send(JSON.stringify({type:"chat", chat_msg: chatInput.value}));
             }
-            sendButton.addEventListener("submit", sendMessage);
+            chatForm.addEventListener("submit", sendMessage);
             // const sendImage = function () {
             //     conn.send(JSON.stringify({type:"image", chat_msg: chatInput.value}));
             // }
@@ -50,7 +50,7 @@
             <div class="col-sm-6" style="flex:1;">
                 <div id="chat"></div>
                 <input type="text" id="chatInput">
-                <form>
+                <form id="chatForm">
                     <input type="submit" value="SEND" id="send">
                 </form>
 
