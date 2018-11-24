@@ -35,18 +35,30 @@
 
         }
     </script>
-    <div class="container" id="image">
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="/svg/logo_devil.svg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="image"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="container" id="chat"></div>
+                <input type="text" id="chatInput">
+                <button id="send">
+                    Send
+                </button>
+                <button id="imageButton">
+                    OBRAZEK
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="container" id="chat">
 
-    </div>
-    <input type="text" id="chatInput">
-    <button id="send">
-        Send
-    </button>
-    <button id="imageButton">
-        OBRAZEK
-    </button>
+
 
 @endsection
