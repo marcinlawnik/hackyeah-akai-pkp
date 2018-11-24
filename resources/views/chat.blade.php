@@ -25,7 +25,7 @@
                 const parsed = JSON.parse(e.data);
                 console.log(parsed);
                 if(parsed.type == 'image'){
-                    chatDiv.innerHTML = 'IMG';
+                    chatDiv.innerHTML = '<img src="' + parsed.msg + '">';
                 } else {
                     chatDiv.innerHTML += '<p>' + parsed.msg + '</p><br>';
                 }
