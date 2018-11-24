@@ -51,7 +51,7 @@
                 <div id="chat"></div>
                 <input type="text" id="chatInput">
                 <form id="chatForm">
-                    <input type="submit" value="SEND" id="send">
+                    <input type=submit value="SEND" id="send">
                 </form>
 
                 {{--<button id="imageButton">--}}
