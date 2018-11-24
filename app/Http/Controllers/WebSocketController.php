@@ -65,6 +65,7 @@ class WebSocketController implements MessageComponentInterface
                 echo "Resource id $resource_id sent $chat_msg \n";
                 break;
             case 'image':
+                echo $data->chat_msg;
                 foreach ($this->clients as $client) {
                     $client->send(json_encode([
                         "type" => 'image',
