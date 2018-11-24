@@ -16,7 +16,7 @@
             const sendMessage = function () {
                 conn.send(JSON.stringify({type:"chat", chat_msg: chatInput.value}));
             }
-            sendButton.addEventListener("click", sendMessage);
+            sendButton.addEventListener("submit", sendMessage);
             const sendImage = function () {
                 conn.send(JSON.stringify({type:"image", chat_msg: chatInput.value}));
             }
