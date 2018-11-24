@@ -38,15 +38,15 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <img src="/svg/logo_devil.svg" width="200px" height="200px">
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 <div id="image"></div>
             </div>
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 <div class="container" id="chat"></div>
                 <input type="text" id="chatInput">
                 <button id="send">
