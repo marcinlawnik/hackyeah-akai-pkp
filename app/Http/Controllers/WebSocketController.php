@@ -88,4 +88,14 @@ class WebSocketController implements MessageComponentInterface
         echo "An error has occurred: {$e->getMessage()}\n";
         $conn->close();
     }
+
+    public function changeImage($imageURL) {
+        foreach ($this->clients as $client) {
+            $client->send(json_encode([
+                "type" => "image",
+                "msg" => $imageURL
+            ]));
+        }
+    }
+
 }

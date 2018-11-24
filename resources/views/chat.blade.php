@@ -19,7 +19,11 @@
             conn.onmessage = function(e) {
                 const parsed = JSON.parse(e.data);
                 console.log(parsed);
-                chatDiv.innerHTML += '<p>' + parsed.msg + '</p><br>';
+                if(parsed.type == 'image'){
+                    chatDiv.innerHTML = 'IMG';
+                } else {
+                    chatDiv.innerHTML += '<p>' + parsed.msg + '</p><br>';
+                }
             };
 
 
