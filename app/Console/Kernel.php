@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Picture;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,7 +25,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(event(new NewPicture()))->everyMinute();
+        $schedule->call(function(){
+            $image = Picture::inRandomOrder()->first();
+            \Ratchet\Client\connect('ws://hatechat.akai.org.pl/websocket/')->then(function($conn) {
+                $conn->send(json_encode(['type' => 'image', 'msg' => $image->url]));
+            }, function ($e) {
+                echo "Could not connect: {$e->getMessage()}\n";
+            });
+        })->everyMinute();
     }
 
     /**
