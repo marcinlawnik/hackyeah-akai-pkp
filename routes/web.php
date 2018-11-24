@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('chat');
 });
 
-Route::get('/picture', function() {
+Route::post('/picture', 'PictureController@store');
+
+Route::get('/picture/', function () {
     return App\Picture::all();
 });
