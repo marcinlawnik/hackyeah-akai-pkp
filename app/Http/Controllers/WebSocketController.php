@@ -72,6 +72,9 @@ class WebSocketController implements MessageComponentInterface
                     ]));
                 }
                 break;
+            default:
+                echo $data;
+                break;
         }
     }
     public function onClose(ConnectionInterface $conn)
