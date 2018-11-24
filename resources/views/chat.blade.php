@@ -11,12 +11,11 @@
             const imageDiv = document.getElementById('image');
             var chatForm = document.getElementById('chatForm');
             var chatInput = document.getElementById('chatInput');
-            const imageButton = document.getElementById('imageButton');
             //Listenery
             const sendMessage = function (e) {
                 e.preventDefault();
                 conn.send(JSON.stringify({type:"chat", chat_msg: chatInput.value}));
-                this.reset();
+                e.reset();
             }
             chatForm.addEventListener("submit", sendMessage);
             // const sendImage = function () {
