@@ -47,7 +47,7 @@
                 <div id="image"></div>
             </div>
             <div class="col-sm-6">
-                <div class="container" id="chat"></div>
+                <div id="chat"></div>
                 <input type="text" id="chatInput">
                 <button id="send">
                     Send
