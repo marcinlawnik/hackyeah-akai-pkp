@@ -13,7 +13,6 @@
             const imageButton = document.getElementById('imageButton');
             //Listenery
             const sendMessage = function () {
-                // console.log(chatInput.value);
                 conn.send(JSON.stringify({type:"chat", chat_msg: chatInput.value}));
             }
             sendButton.addEventListener("click", sendMessage);

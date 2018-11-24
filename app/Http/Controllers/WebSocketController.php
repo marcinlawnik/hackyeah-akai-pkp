@@ -55,11 +55,6 @@ class WebSocketController implements MessageComponentInterface
             case 'chat':
                 $chat_msg = $data->chat_msg;
                 $response_to = "<span class='text-info'><b>" . $resource_id . "</b>: $chat_msg <span class='text-warning float-right'>" . date('Y-m-d h:i a') . "</span></span><br>";
-                // Output
-//                $from->send(json_encode([
-//                    "type" => $type,
-//                    "msg" => $response_from
-//                ]));
                 foreach ($this->clients as $client) {
                         $client->send(json_encode([
                             "type" => $type,
@@ -82,26 +77,11 @@ class WebSocketController implements MessageComponentInterface
     public function onClose(ConnectionInterface $conn)
     {
         $this->clients->detach($conn);
-        foreach ($this->clients as $client) {
-            $client->send(json_encode([
-                "type" => "socket",
-                "msg" => "Total Connected: " . count($this->clients)
-            ]));
-        }
     }
     public function onError(ConnectionInterface $conn, \Exception $e)
     {
         echo "An error has occurred: {$e->getMessage()}\n";
         $conn->close();
-    }
-
-    public function changeImage($imageURL) {
-        foreach ($this->clients as $client) {
-            $client->send(json_encode([
-                "type" => "image",
-                "msg" => $imageURL
-            ]));
-        }
     }
 
 }
