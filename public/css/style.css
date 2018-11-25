@@ -1,0 +1,38 @@
+.navbar {
+    background-color: #000000;
+    display: inline-block;
+    padding: 0.1rem !important;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+}
+
+#chat {
+    height: 30rem;
+    background-color: white;
+}
+
+#chatInput {
+    width: 95%;
+    margin-top: 0.5em;
+}
+
+#chatForm {
+    margin-top: 0.5em;
+
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    height: 90%;
+}
+
+.logo {
+    max-width: 100px;
+
+}

@@ -46,10 +46,10 @@
         }
     </script>
 
-    <div class="container-fluid">
+    <div class="content container-fluid">
         <div class="row">
-            <div class="col-sm-12">
-                <img src="/svg/logo_devil.svg" width="200px" height="200px">
+            <div class="navbar col-sm-12">
+                <img src="/svg/logo_devil.svg" class="navbar-brand logo">
             </div>
         </div>
         <div class="row" style="display: flex;">
@@ -58,16 +58,24 @@
             </div>
             <div class="col-sm-6" style="flex:1;">
                 <div id="chat"></div>
-                <input type="text" id="chatInput">
-                <form id="chatForm">
-                    <input type="submit" value="SEND" id="send">
-                </form>
+                <div class="input container-fluid" style="display: flex;">
+                    <textarea id="chatInput">
+                    </textarea>
 
-                <p id="fire_vote_count"></p>
+                    <form id="chatForm">
 
-                <button id="fireVoteButton">
-                    <img src="/svg/fire.svg" width="200px" height="200px">
-                </button>
+                        <div class="col-10" style="flex:1;">
+                        <input type="submit" value="SEND" id="send">
+                        </div>
+
+                        <div class="col-2" style="flex:1;">
+                        <p id="fire_vote_count"></p>
+                        <button id="fireVoteButton">
+                            <img src="/svg/fire.svg" width="50px" height="50px" style="display: inline;">
+                        </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
