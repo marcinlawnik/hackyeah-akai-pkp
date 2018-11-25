@@ -67,14 +67,19 @@ class WebSocketController implements MessageComponentInterface
                 break;
             case 'image':
                 echo $data->chat_msg;
-                $pictureID = Picture::whereUrl($data->chat_msg)->first()->id;
+                $picture = Picture::whereUrl($data->chat_msg)->first();
                 foreach ($this->clients as $client) {
                     $client->send(json_encode([
                         "type" => 'image',
                         "msg" => $data->chat_msg,
-                        "image_id" => $pictureID
+                        "image_id" => $picture->id
+                    ]));
+                    $client->send(json_encode([
+                        "type" => 'update_fire_vote_count',
+                        "msg" => $picture->fire_votes,
                     ]));
                 }
+
                 break;
             case 'fire_vote':
                 $chat_msg = $data->chat_msg;
