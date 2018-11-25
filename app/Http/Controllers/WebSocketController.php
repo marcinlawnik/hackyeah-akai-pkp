@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Message;
+use App\Picture;
 use Exception;
 use React\EventLoop\LoopInterface;
 use React\EventLoop\TimerInterface;
@@ -66,10 +67,24 @@ class WebSocketController implements MessageComponentInterface
                 break;
             case 'image':
                 echo $data->chat_msg;
+                $pictureID = Picture::whereUrl($data->chat_msg)->first()->id;
                 foreach ($this->clients as $client) {
                     $client->send(json_encode([
                         "type" => 'image',
-                        "msg" => $data->chat_msg
+                        "msg" => $data->chat_msg,
+                        "image_id" => $pictureID
+                    ]));
+                }
+                break;
+            case 'fire_vote':
+                $chat_msg = $data->chat_msg;
+                $picture = Picture::whereUrl($data->chat_msg)->first();
+                $picture->fire_votes++;
+                $picture->save();
+                foreach ($this->clients as $client) {
+                    $client->send(json_encode([
+                        "type" => 'update_fire_vote_count',
+                        "msg" => $picture->fire_votes,
                     ]));
                 }
                 break;
