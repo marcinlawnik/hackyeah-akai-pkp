@@ -74,11 +74,14 @@ class WebSocketController implements MessageComponentInterface
                         "msg" => $data->chat_msg,
                         "image_id" => $picture->id
                     ]));
+                }
+                foreach ($this->clients as $client) {
                     $client->send(json_encode([
                         "type" => 'update_fire_vote_count',
                         "msg" => $picture->fire_votes,
                     ]));
                 }
+
 
                 break;
             case 'fire_vote':
