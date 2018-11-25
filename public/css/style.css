@@ -9,12 +9,13 @@
 }
 
 #chat {
-    height: 30rem;
+    height: 70vh;
+    overflow-y: scroll;
     background-color: white;
 }
 
 #chatInput {
-    width: 95%;
+    width: 100%;
     margin-top: 0.5em;
 }
 

@@ -46,19 +46,19 @@
         }
     </script>
 
-    <div class="content container-fluid">
+    <div class="content container-fluid  h-100">
         <div class="row">
             <div class="navbar col-sm-12">
                 <img src="/svg/logo_devil.svg" class="navbar-brand logo">
             </div>
         </div>
-        <div class="row" style="display: flex;">
-            <div class="col-sm-6"  style="flex:1;">
+        <div class="row  h-100" style="display: flex;">
+            <div class="col-sm-6  h-100"  style="flex:1;">
                 <div id="image"></div>
             </div>
             <div class="col-sm-6" style="flex:1;">
                 <div id="chat"></div>
-                <div class="input container-fluid" style="display: flex;">
+                <div class="input container-fluid" style="display: flex; padding: 0;">
                     <textarea id="chatInput">
                     </textarea>
 
