@@ -11,6 +11,8 @@
             const imageDiv = document.getElementById('image');
             var chatForm = document.getElementById('chatForm');
             var chatInput = document.getElementById('chatInput');
+            const fireVote = document.getElementById('fireVoteButton');
+            const fireVoteCount = document.getElementById('fire_vote_count');
             //Listenery
             const sendMessage = function (e) {
                 e.preventDefault();
@@ -18,17 +20,24 @@
                 document.getElementById('chatForm').reset();
             }
             chatForm.addEventListener("submit", sendMessage);
-            // const sendImage = function () {
-            //     conn.send(JSON.stringify({type:"image", chat_msg: chatInput.value}));
-            // }
-            // imageButton.addEventListener("click", sendImage);
+            const sendVote = function () {
+                conn.send(JSON.stringify({type:"fire_vote", chat_msg: imageDiv.getElementsByTagName('img')[0].src}));
+            }
+            fireVote.addEventListener("click", sendVote);
             conn.onmessage = function(e) {
                 const parsed = JSON.parse(e.data);
                 console.log(parsed);
-                if(parsed.type == 'image'){
-                    imageDiv.innerHTML = '<img src="' + parsed.msg + '">';
-                } else {
-                    chatDiv.innerHTML += '<p>' + parsed.msg + '</p><br>';
+                switch (parsed.type) {
+                    case 'image':
+                        imageDiv.innerHTML = '<img src="' + parsed.msg + '">';
+                        break;
+                    case 'update_fire_vote_count':
+                        fireVoteCount.innerText = parsed.msg;
+                        break;
+                    default:
+                        chatDiv.innerHTML += '<p>' + parsed.msg + '</p><br>';
+                        break;
+
                 }
             };
 
@@ -54,9 +63,11 @@
                     <input type="submit" value="SEND" id="send">
                 </form>
 
-                {{--<button id="imageButton">--}}
-                    {{--OBRAZEK--}}
-                {{--</button>--}}
+                <p id="fire_vote_count"></p>
+
+                <button id="fireVoteButton">
+                    <img src="/svg/fire.svg" width="200px" height="200px">
+                </button>
             </div>
         </div>
     </div>
