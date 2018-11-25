@@ -55,6 +55,9 @@ class WebSocketController implements MessageComponentInterface
         switch ($type) {
             case 'chat':
                 $chat_msg = $data->chat_msg;
+                $message = new Message;
+                $message->text = $chat_msg;
+                $message->save();
                 $response_to = "<span class='text-info'><b>" . $resource_id . "</b>: $chat_msg <span class='text-warning float-right'>" . date('Y-m-d h:i a') . "</span></span>";
                 foreach ($this->clients as $client) {
                         $client->send(json_encode([

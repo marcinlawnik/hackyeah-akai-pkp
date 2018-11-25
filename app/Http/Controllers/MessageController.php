@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Message;
 
 class MessageController extends Controller
 {
@@ -12,9 +13,9 @@ class MessageController extends Controller
 
         $message = new Message;
 
-        $message->message = $request->request->get('data');
+        $message->text = $request->input('data');
         $message->save();
-        return response('', 201)
+        return response('halo', 201)
             ->header('Content-Type', 'text/plain');
 
     }

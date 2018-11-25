@@ -20,4 +20,5 @@ Route::post('/picture', 'PictureController@store');
 Route::get('/picture/', function () {
     return App\Picture::all();
 });
-Route::post('/message/', 'MessageController@store');
+
+Route::post('/message', 'MessageController@store');
